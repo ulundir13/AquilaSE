@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: aquila
+      POSTGRES_PASSWORD: aquila
+      POSTGRES_DB: aquilase
+    ports:
+      - "5432:5432"
+    volumes:
+      - aquila_pg:/var/lib/postgresql/data
+
+volumes:
+  aquila_pg:
