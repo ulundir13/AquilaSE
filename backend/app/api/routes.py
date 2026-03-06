@@ -6,6 +6,8 @@ from app.services.quality import find_ambiguity
 from app.services.classifier import classify_requirement
 from app.services.risk import compute_risk_score
 from app.services.traceability import build_traceability_matrix
+from fastapi import Depends
+from app.core.auth import require_api_key
 
 router = APIRouter()
 
@@ -15,7 +17,7 @@ def health():
     return {"status": "ok"}
 
 
-@router.post("/requirements/upload")
+@router.post("/requirements/upload", dependencies=[Depends(require_api_key)])
 async def upload_requirements(file: UploadFile = File(...)):
     if not file.filename.lower().endswith(".csv"):
         return {"error": "Please upload a CSV file."}
@@ -49,8 +51,12 @@ async def upload_requirements(file: UploadFile = File(...)):
         "analysis_preview": analysis,
     }
 
-@router.post("/traceability/rtm")
-async def generate_rtm(file: UploadFile = File(...), top_k: int = 3, min_similarity: float = 0.20):
+@router.post("/traceability/rtm", dependencies=[Depends(require_api_key)])
+async def generate_rtm(
+    file: UploadFile = File(...),
+    top_k: int = 3,
+    min_similarity: float = 0.20
+):
     if not file.filename.lower().endswith(".csv"):
         return {"error": "Please upload a CSV file."}
 

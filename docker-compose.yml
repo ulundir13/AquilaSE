@@ -1,6 +1,7 @@
 services:
   db:
     image: postgres:16
+    container_name: aquilase-db
     environment:
       POSTGRES_USER: aquila
       POSTGRES_PASSWORD: aquila
@@ -9,6 +10,29 @@ services:
       - "5432:5432"
     volumes:
       - aquila_pg:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    container_name: aquilase-backend
+    environment:
+      AQUILASE_API_KEY: change-me-to-a-long-secret
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: aquilase-frontend
+    environment:
+      NEXT_PUBLIC_AQUILASE_API_KEY: change-me-to-a-long-secret
+      NEXT_PUBLIC_API_BASE_URL: http://127.0.0.1:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
 
 volumes:
   aquila_pg:

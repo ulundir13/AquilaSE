@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pandas
+python-multipart
+scikit-learn
+sqlalchemy
+psycopg2-binary

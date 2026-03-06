@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 
+const API_KEY = process.env.NEXT_PUBLIC_AQUILASE_API_KEY || "";
+
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000";
+
 type AnalysisRow = {
   text: string;
   ambiguous_terms: string[];
@@ -48,10 +53,11 @@ export default function Home() {
       const form1 = new FormData();
       form1.append("file", file);
 
-      const res1 = await fetch("http://127.0.0.1:8000/requirements/upload", {
-        method: "POST",
-        body: form1,
-      });
+     const res1 = await fetch(`${API_BASE_URL}/requirements/upload`, {
+      method: "POST",
+      headers: { "X-API-Key": API_KEY },
+      body: form1,
+     });
 
       const data1 = await res1.json();
       if (!res1.ok || data1.error) throw new Error(data1.error || "Upload failed");
@@ -62,10 +68,14 @@ export default function Home() {
       const form2 = new FormData();
       form2.append("file", file);
 
-      const res2 = await fetch(
-        "http://127.0.0.1:8000/traceability/rtm?top_k=3&min_similarity=0.05",
-        { method: "POST", body: form2 }
-      );
+     const res2 = await fetch(
+     `${API_BASE_URL}/traceability/rtm?top_k=3&min_similarity=0.05`,
+     {
+      method: "POST",
+      headers: { "X-API-Key": API_KEY },
+      body: form2,
+     }
+    );
 
       const data2 = await res2.json();
       if (!res2.ok || data2.error) throw new Error(data2.error || "RTM failed");
