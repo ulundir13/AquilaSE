@@ -2,7 +2,7 @@
 
 
 
-AI-Powered Systems Engineering Requirements Intelligence Platform
+AquilaSE is a systems engineering framework that helps turn ideas or mission goals into working systems. It organizes the process of defining requirements, designing architecture, building components, integrating them, and testing the final system to make sure it works as intended.
 
 
 
