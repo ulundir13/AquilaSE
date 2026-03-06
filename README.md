@@ -1,150 +1,464 @@
-## AquilaSE
+\## AquilaSE
+
+
 
 AI-Powered Systems Engineering Requirements Intelligence Platform
 
-## OVERVIEW
 
-AquilaSE is a full-stack AI-powered platform designed to analyze, validate, and enhance systems engineering requirements. It applies natural language processing (NLP) techniques to detect ambiguous language, classify requirement types, and support traceability and risk awareness in complex engineered systems.
 
-Built using FastAPI, Next.js, PostgreSQL, and Docker, AquilaSE demonstrates modern full-stack architecture, data engineering workflows, AI integration, and production-ready containerization.
+\## OVERVIEW
 
-This project simulates a digital engineering tool aligned with aerospace, defense, telecom, and large-scale infrastructure systems development practices.
 
-## FEATURES
 
-- CSV-based requirements ingestion
-- Automated ambiguity detection (rule-based NLP)
-- REST API built with FastAPI
-- Interactive Swagger API documentation
-- Next.js full-stack frontend dashboard
-- Dockerized PostgreSQL database
-- Requirement classification (in progress)
-- Traceability matrix generation (planned)
-- Risk scoring \& visualization heatmap (planned)
-- Embedding-based similarity mapping (planned)
+AquilaSE is a full-stack AI-assisted platform designed to analyze, validate, and visualize systems engineering requirements.
 
-## TECH STACK
 
-Backend:
-- FastAPI
-- Python 3.14
-- Pydantic
-- SQLAlchemy (planned)
-- Rule-based NLP engine (extensible to ML models)
 
-Frontend:
-- Next.js (App Router)
-- React
-- TypeScript
-- TailwindCSS
+The platform applies natural language processing (NLP) and similarity analysis to:
 
-Database:
-- PostgreSQL (Docker container)
 
-DevOps:
-- Docker
-- Docker Compose
-- Git version control
 
-API Documentation:
-- OpenAPI / Swagger
+• detect ambiguous language
 
-## HOW TO RUN LOCALLY
+• classify requirement types
 
-1. Clone Repository
-git clone https:https://github.com/ulundir13/AquilaSE
-cd AquilaSE
+• calculate risk scores
 
-2. Start PostgreSQL with Docker
-docker compose up -d
-Verify container is running:
-docker ps
+• generate traceability relationships
 
-3. Start Backend
-cd backend
-python -m venv .venv
-..venv\\Scripts\\activate (Windows)
-pip install -r requirements.txt (if created)
-uvicorn app.main:app --reload --port 8000
+• visualize requirement quality and risk
 
-Backend runs at:
-http://127.0.0.1:8000
 
-Swagger documentation:
+
+AquilaSE simulates a modern digital engineering toolchain aligned with practices used in:
+
+
+
+• aerospace
+
+• telecom
+
+• defense
+
+• large-scale infrastructure systems
+
+
+
+The project demonstrates AI engineering, data engineering, and modern full-stack architecture using containerized services and production-style API design.
+
+
+
+\## CORE FEATURES
+
+Requirements Analysis
+
+
+
+Upload CSV requirements and automatically analyze:
+
+
+
+• ambiguity detection
+
+• requirement classification
+
+• risk scoring
+
+
+
+Requirement Classification
+
+
+
+Requirements are automatically categorized as:
+
+
+
+• Functional
+
+• Performance
+
+• Interface
+
+• Safety
+
+
+
+Risk Scoring Engine
+
+
+
+Each requirement receives a risk score based on:
+
+
+
+• ambiguous language
+
+• requirement complexity
+
+• classification context
+
+
+
+Results are displayed through a visual heatmap dashboard.
+
+
+
+Traceability Matrix (RTM)
+
+
+
+The platform generates similarity-based requirement relationships.
+
+
+
+This helps engineers identify requirement dependencies and relationships within complex systems.
+
+
+
+Interactive Dashboard
+
+
+
+The frontend dashboard displays:
+
+
+
+• requirements analysis table
+
+• risk heatmap visualization
+
+• traceability matrix relationships
+
+
+
+Secure API Access
+
+
+
+API endpoints are protected using:
+
+
+
+X-API-Key authentication
+
+
+
+This simulates a production-style secured engineering API.
+
+
+
+\## ARCHITECTURE
+
+
+
+Frontend (Next.js + React)
+
+│
+
+│ REST API
+
+▼
+
+Backend (FastAPI)
+
+│
+
+│ Data Services
+
+▼
+
+PostgreSQL Database
+
+
+
+Container orchestration is handled with Docker Compose.
+
+
+
+\## TECHNOLOGY STACK
+
+Backend
+
+
+
+Python 3.14
+
+FastAPI
+
+Pydantic
+
+Uvicorn
+
+NLP rule engine
+
+Similarity matching for traceability
+
+
+
+Frontend
+
+
+
+Next.js (App Router)
+
+React
+
+TypeScript
+
+TailwindCSS
+
+
+
+Database
+
+
+
+PostgreSQL
+
+Docker container
+
+
+
+DevOps
+
+
+
+Docker
+
+Docker Compose
+
+Git version control
+
+
+
+API Documentation
+
+
+
+Automatically generated using:
+
+
+
+OpenAPI / Swagger
+
+
+
+Available at:
+
+
+
 http://127.0.0.1:8000/docs
 
-4. Start Frontend
-Open a new terminal:
 
-cd frontend
-npm install
-npm run dev
 
-Frontend runs at:
+\## RUNNING THE PROJECT
+
+Clone Repository
+
+
+
+git clone https://github.com/ulundir13/AquilaSE
+
+
+
+cd AquilaSE
+
+
+
+OPTION 1 — FULL STACK (DOCKER)
+
+
+
+Start the entire stack:
+
+
+
+docker compose up --build
+
+
+
+Services will run at:
+
+
+
+Frontend
+
 http://localhost:3000
 
 
 
-## EXAMPLE CSV INPUT
+Backend API
+
+http://127.0.0.1:8000
+
+
+
+API Documentation
+
+http://127.0.0.1:8000/docs
+
+
+
+OPTION 2 — LOCAL DEVELOPMENT
+
+Start Backend
+
+
+
+cd backend
+
+python -m venv .venv
+
+.venv\\Scripts\\activate
+
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload --port 8000
+
+
+
+Backend runs at:
+
+
+
+http://127.0.0.1:8000
+
+
+
+Start Frontend
+
+
+
+Open a new terminal:
+
+
+
+cd frontend
+
+npm install
+
+npm run dev
+
+
+
+Frontend runs at:
+
+
+
+http://localhost:3000
+
+
+
+\## EXAMPLE CSV INPUT
+
+
 
 requirement
-The system shall be fast and user friendly.
-The system shall encrypt data at rest.
-The interface shall be robust and secure.
 
-The output preview includes detected ambiguous terms.
+The system shall encrypt data at rest using AES-256.
 
+The system shall encrypt data in transit using TLS 1.3.
 
+The system shall manage encryption keys using a key management service.
 
-## ROADMAP
-
-Phase 1 – Foundation (Completed)
-
-- Backend API scaffold
-- CSV ingestion
-- Ambiguity detection service
-- Frontend API connectivity
-- Dockerized database
+The system shall log all encryption failures for audit purposes.
 
 
 
-Phase 2 – Intelligence Layer
+\## PROJECT ROADMAP
 
-- Requirement type classification
-- Risk scoring model
-- Confidence metrics
+Phase 1 — Foundation (Completed)
 
 
 
-Phase 3 – Systems Engineering Expansion
+Backend API scaffold
 
-- Requirements Traceability Matrix (RTM)
-- Embedding-based similarity analysis
-- Verification method suggestions
+CSV ingestion
 
-Phase 4 – Production Hardening
+Ambiguity detection service
 
-- Authentication
-- Database persistence
-- CI/CD pipeline
-- Cloud deployment
+Frontend API connectivity
+
+Dockerized database
 
 
 
-## ENGINEERING FOCUS
-
-This project emphasizes:
-
-- Separation of concerns (API vs services vs domain logic)
-- Containerized infrastructure
-- Extensible AI architecture
-- Systems engineering workflow modeling
-- Clean, modular code organization
+Phase 2 — Intelligence Layer (Completed)
 
 
 
-Author:
+Requirement classification
+
+Risk scoring engine
+
+Traceability similarity analysis
+
+Risk heatmap visualization
+
+
+
+Phase 3 — Systems Engineering Expansion (Planned)
+
+
+
+Requirement verification suggestions
+
+Requirement coverage analysis
+
+Machine learning based requirement classification
+
+Embedding-based semantic traceability
+
+
+
+Phase 4 — Production Hardening
+
+
+
+Database persistence layer
+
+CI/CD pipeline
+
+Cloud deployment
+
+Enterprise authentication
+
+
+
+\## ENGINEERING DESIGN PRINCIPLES
+
+
+
+AquilaSE emphasizes:
+
+
+
+• modular service architecture
+
+• separation of API and domain logic
+
+• containerized infrastructure
+
+• extensible AI/ML architecture
+
+• production-style API design
+
+
+
+The project models digital engineering workflows used in complex systems development programs.
+
+
+
+\## AUTHOR
+
+
+
 Joshua Harrison
+
+
+
 Telecommunications \& Network Engineer
-AI / Data / Full-Stack Systems Development
+
+AI Engineering • Data Engineering • Full-Stack Systems Development
 
