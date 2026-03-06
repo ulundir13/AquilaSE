@@ -1,4 +1,4 @@
-\## AquilaSE
+# AquilaSE
 
 
 
@@ -6,7 +6,7 @@ AI-Powered Systems Engineering Requirements Intelligence Platform
 
 
 
-\## OVERVIEW
+### OVERVIEW
 
 
 
@@ -48,9 +48,11 @@ The project demonstrates AI engineering, data engineering, and modern full-stack
 
 
 
-\## CORE FEATURES
+### CORE FEATURES
 
-Requirements Analysis
+
+
+##### Requirements Analysis
 
 
 
@@ -66,7 +68,7 @@ Upload CSV requirements and automatically analyze:
 
 
 
-Requirement Classification
+##### Requirement Classification
 
 
 
@@ -84,7 +86,7 @@ Requirements are automatically categorized as:
 
 
 
-Risk Scoring Engine
+##### Risk Scoring Engine
 
 
 
@@ -104,7 +106,7 @@ Results are displayed through a visual heatmap dashboard.
 
 
 
-Traceability Matrix (RTM)
+##### Traceability Matrix (RTM)
 
 
 
@@ -116,7 +118,7 @@ This helps engineers identify requirement dependencies and relationships within 
 
 
 
-Interactive Dashboard
+##### Interactive Dashboard
 
 
 
@@ -132,7 +134,7 @@ The frontend dashboard displays:
 
 
 
-Secure API Access
+##### Secure API Access
 
 
 
@@ -148,7 +150,7 @@ This simulates a production-style secured engineering API.
 
 
 
-\## ARCHITECTURE
+### ARCHITECTURE
 
 
 
@@ -176,9 +178,11 @@ Container orchestration is handled with Docker Compose.
 
 
 
-\## TECHNOLOGY STACK
+### TECHNOLOGY STACK
 
-Backend
+
+
+##### Backend
 
 
 
@@ -196,7 +200,7 @@ Similarity matching for traceability
 
 
 
-Frontend
+##### Frontend
 
 
 
@@ -210,7 +214,7 @@ TailwindCSS
 
 
 
-Database
+##### Database
 
 
 
@@ -220,7 +224,7 @@ Docker container
 
 
 
-DevOps
+##### DevOps
 
 
 
@@ -232,7 +236,7 @@ Git version control
 
 
 
-API Documentation
+##### API Documentation
 
 
 
@@ -252,9 +256,11 @@ http://127.0.0.1:8000/docs
 
 
 
-\## RUNNING THE PROJECT
+### RUNNING THE PROJECT
 
-Clone Repository
+
+
+##### Clone Repository
 
 
 
@@ -266,7 +272,7 @@ cd AquilaSE
 
 
 
-OPTION 1 — FULL STACK (DOCKER)
+##### OPTION 1 — FULL STACK (DOCKER)
 
 
 
@@ -300,9 +306,11 @@ http://127.0.0.1:8000/docs
 
 
 
-OPTION 2 — LOCAL DEVELOPMENT
+##### OPTION 2 — LOCAL DEVELOPMENT
 
-Start Backend
+
+
+###### Start Backend
 
 
 
@@ -326,7 +334,7 @@ http://127.0.0.1:8000
 
 
 
-Start Frontend
+###### Start Frontend
 
 
 
@@ -350,7 +358,7 @@ http://localhost:3000
 
 
 
-\## EXAMPLE CSV INPUT
+### EXAMPLE CSV INPUT
 
 
 
@@ -366,9 +374,11 @@ The system shall log all encryption failures for audit purposes.
 
 
 
-\## PROJECT ROADMAP
+### PROJECT ROADMAP
 
-Phase 1 — Foundation (Completed)
+
+
+##### Phase 1 — Foundation (Completed)
 
 
 
@@ -384,7 +394,7 @@ Dockerized database
 
 
 
-Phase 2 — Intelligence Layer (Completed)
+##### Phase 2 — Intelligence Layer (Completed)
 
 
 
@@ -398,7 +408,7 @@ Risk heatmap visualization
 
 
 
-Phase 3 — Systems Engineering Expansion (Planned)
+##### Phase 3 — Systems Engineering Expansion (Planned)
 
 
 
@@ -412,7 +422,7 @@ Embedding-based semantic traceability
 
 
 
-Phase 4 — Production Hardening
+##### Phase 4 — Production Hardening
 
 
 
@@ -426,7 +436,7 @@ Enterprise authentication
 
 
 
-\## ENGINEERING DESIGN PRINCIPLES
+##### ENGINEERING DESIGN PRINCIPLES
 
 
 
@@ -450,7 +460,7 @@ The project models digital engineering workflows used in complex systems develop
 
 
 
-\## AUTHOR
+### AUTHOR
 
 
 
